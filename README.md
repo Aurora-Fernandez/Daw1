@@ -1,7 +1,7 @@
 # webapp7
 
 ## Nombre Aplicación:
-+ **Book~Eater~Effect (BEE)**
++ **Book●Eater●Effect (BEE)**
 ## Integrantes: 
 * Aurora María Fernández Basanta - am.fernandez.2019@alumnos.urjc.es - Aurora-Fernandez
 * Juan Álvarez Loeches - j.alvarezl.2019@alumnos.urjc.es - Juan-Alvarez-Loeches
