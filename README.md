@@ -26,5 +26,6 @@
 ### Gráficos:
 
 ### Tecnología complementaria:
++ https://trello.com/invite/b/y7cBFIgI/ATTI28caf97c4005b63e8d2d52266b9248d69E83ACAB/daw
 
 ### Algoritmo/Consulta Avanzada:
