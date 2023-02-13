@@ -41,13 +41,14 @@ body{
 }
 .Cuerpo-InicioSesion .boton{
     background:#1050A7;
-    width: 100%;
+    width: 50%;
     border: none;
     padding: 10px;
     border-radius: 5px;
     margin: 15px 0;
     color: white;
     font-size: 15px;
+    align-items: center;
 }
 .Cuerpo-InicioSesion .boton:hover{
     background: #1A5FBE;
