@@ -9,8 +9,19 @@
     margin-left: 55px;
 }
 
-.imagenCarrusel{
-
+#fila-1{
+    margin: 20cm;
+}
+#columna-1{
+    margin: 20px;
+    background-color: aliceblue;
+    align-items: center;
+    border:2px solid dimgray;
+    border-radius: 2%;
+}
+h5{
+    text-align: center;
+    
 }
 
 
