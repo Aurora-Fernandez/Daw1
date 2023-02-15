@@ -5,7 +5,9 @@
 }
 
 body{
-    background-color: #F6F2FF;
+    /* background-color: #F6F2FF; */
+    /* background: linear-gradient(45deg, rgb(235, 191, 235), rgb(176, 179, 246)); */
+    background: linear-gradient(90deg, rgb(199, 202, 253), rgb(238, 232, 242));
     width: 100%;
     min-height: 100vh;
 
