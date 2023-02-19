@@ -78,23 +78,18 @@
     <div class="perfil-usuario">
         <!--Parte de arriba-->    
         <div class="usuario-body">
-            <div class= "row m-3" style = "height: auto;">
+            <div class= "row m-5" style = "height: auto;">
                 <!--Nombre, desc y redes sociales-->
                 <div class="col-4" style="height: auto;">
                     <div id="nombre-y-descrip">
                         <a class="btn btn-primary" href="Pantalla-Administracion.html" role="button" id="cambio-a-admin">Modo Admin</a>
                         <h2>Psykox</h2>
-                        <p class="descripcion">Hola soy Psykox y me encanta la musica y jugar videojuegos </p>
-                        <div class="redes-sociales" >
-                            <li><i class="icon-mail"><img src="Imagenes/logo-gmail.png" alt="user-img" id="img-gmail"></i><a>psy24@gmail.com</a></li>
-                            <li><i class="icon-instagram"><img src="Imagenes/logo-instagram.png" alt="user-img" id="img-instagram"></i><a>psy_24</a></li>
-                            <li><i class="icon-facebook"><img src="Imagenes/logo-facebook.png" alt="user-img" id="img-facebook"></i><a>Facebook</a></li>    
-                        </div>
+                        <p class="descripcion">Hola soy Psykox y me encanta la musica y jugar videojuegos. Todo empezó hace años cuando aun era un nogal.</p>
                     </div>
                 </div>
-                <div class="col-8" id="grafico-leido" style ="width: auto; height: auto; float: left">
+                <div class="col-5" id="grafico-leido" style ="width: auto; height: auto; float: left">
                     <div>
-                        <h3>Gráfico libros leídos</h3>
+                        <h2>Gráfico libros leídos</h2>
                         <p id="leyenda-grafico">
                             Esta es una leyenda del grafico de tus libros leidos:
                             <br>
@@ -108,11 +103,19 @@
                             Verde
                             <img src="Imagenes/grafico-ejemplo.png" alt="user-img" id="grafico">
                         </p>
-                    </div>       
+                    </div>
                 </div>
+                <div class="col-2" >
+                    <div class="redes-sociales" style="height: auto; width: auto; float:inline-start;">
+                        <h2>Redes Sociales</h2>
+                        <li><i class="icon-mail"><img src="Imagenes/logo-gmail.png" alt="user-img" id="img-gmail"></i><a>psy24@gmail.com</a></li>
+                        <li><i class="icon-instagram"><img src="Imagenes/logo-instagram.png" alt="user-img" id="img-instagram"></i><a>psy_24</a></li>
+                        <li><i class="icon-facebook"><img src="Imagenes/logo-facebook.png" alt="user-img" id="img-facebook"></i><a>Facebook</a></li>
+                    </div> 
+                </div>             
             </div>
-            <div class= "row m-3" style = "height: 30vh;">
-                <h4><u>STOCK-BEE</u></h4>
+            <div class= "row m-3" style = "height: 30vh;" id="libros">
+                <h4><u>BOOK-EATEN</u></h4>
                 <!--Lib 1-->
                 <div class="col-2">
                 <div class="card p-0">
@@ -380,73 +383,108 @@
                 </div>
             </div>
             </div>
-            <!--Lib 5-->
-            <div class="col-2">
-            <div class="card p-0">
-                <img src="Imagenes/jigokuraku1.jpg" class="card-img-top" alt="...">
-                <div class="card-body p-2.5">
-                <h5 class="card-title">Jigokuraku - Hell's Paradise</h5>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal5" id="book-btn">
-                    Información
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Jigokuraku - Hell's Paradise</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                        <div class="row border border-lightrounded m-2" id="modal-row">
-                            <img src="Imagenes/jigokuraku1.jpg" class="modal-img p-0" alt="...">
-                            <div class="col">
-                            <div class="d-flex flex-row">
-                                <div class="col-md-2 form-check m-2">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Favoritos
-                                </label>
-                                </div>
-                                <div class="col-md-4 m-2 list-group-item dropdown">
-                                <h6>Añadir a lista:</h6>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>---</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                </div>
-                                <div class="col-md-4 m-2 list-group-item dropdown">
-                                <h6>Estado:</h6>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>---</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                </div>
-                            </div>
-                            <h3>Sinopsis:</h3>
-                            <p>Gabimaru el vacío, conocido como el Ninja más fuerte, es atrapado al intentar darse a la fuga. La verdugo Yamada as a em on sagiri le cuenta que puede conseguir que sea exculpado de todos sus crímenes. No obstante, para ello debe ir hasta una isla misteriosa con varios asesinos en su misma situación. En esta isla se entrelazan el infierno y el paraíso, y solo uno podrá conseguir el elixir de la vida…</p>                             
-                            </div>
-                        </div>
-                        <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
-                            <h5>Comentario:</h5>
-                        </div>
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+            <!--Filtros-->
+            <aside class="filter-container border rounded">
+                <ul class="list-group list-group-flush ">
+                  <li class="list-group-item"><h1>Filtros:</h1></li>
+                  <li class="list-group-item dropdown">
+                    <h5>Categoría:</h5>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>TODO</option>
+                      <option value="1">Manga</option>
+                      <option value="2">Manwha</option>
+                      <option value="3">Manhua</option>
+                      <option value="3">Comics</option>
+                      <option value="3">Novela China</option>
+                      <option value="3">Novela Coreana</option>
+                      <option value="3">Novela Japonesa</option>
+                      <option value="3">Cuentos Infantiles</option>
+                    </select>
+                  </li>
+                  <li class="list-group-item dropdown">
+                    <h5>Género:</h5>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>TODO</option>
+                      <option value="1">Acción</option>
+                      <option value="2">Comedia</option>
+                      <option value="3">Terror</option>
+                      <option value="3">Drama</option>
+                    </select>
+                  </li>
+                  <li class="list-group-item dropdown">
+                    <h5>Año:</h5>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>TODO</option>
+                      <option value="1">2023</option>
+                      <option value="2">2022</option>
+                      <option value="3">2021</option>
+                      <option value="1">2020</option>
+                      <option value="2">2019</option>
+                      <option value="3">2018</option>
+                    </select>
+                  </li>
+                  <li class="list-group-item">
+                    <h5>Temporada:</h5>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Primavera
+                      </label>
                     </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Verano
+                      </label>
                     </div>
-                </div>
-                </div>
-            </div>
-            </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Otoño
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Invierno
+                      </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item dropdown">
+                    <h5>Estado:</h5>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Completo
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Emisión
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Cancelado
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Pausado
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Por estrenarse
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </aside>
             </div>
         </div>
     </div>

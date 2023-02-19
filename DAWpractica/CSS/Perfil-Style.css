@@ -64,6 +64,7 @@
     align-items: center;
 }
 .perfil-usuario .grafico-libros-leidos,
+.perfil-usuario .redes-sociales,
 .perfil-usuario #nombre-y-descrip{
     display: block;
     background-color: white;
@@ -80,12 +81,14 @@
     border-color: #FFFFFF;
     box-shadow: 0 0 12px black;
     align-items: center;
-    border-radius: 18px;
-    
+    border-radius: 18px;    
 }
 #grafico{
-    margin-left: auto;
+    margin-left: 30px;
     display: block;
+}
+.redes-sociales{
+    margin: 20px;
 }
 #leyenda-grafico{
     display: flex;
@@ -103,6 +106,12 @@
     display: flex;
     position: absolute;
     left: calc(10% - 90px);    
+}
+h4{
+    background-color: #ffffff;
+    text-align: center;
+    clear: right;
+    border-radius: 18px;
 }
 .perfil-usuario .nombre-y-descrip h2{
     width: 100%;
