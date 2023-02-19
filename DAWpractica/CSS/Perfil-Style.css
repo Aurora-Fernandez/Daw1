@@ -1,9 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 #img-user{
     width: 200px;
     height: 200px;
@@ -68,11 +62,9 @@
 .perfil-usuario .usuario-body{
     width: 95%;
     align-items: center;
-    margin-bottom: 1.25rem;
 }
 .perfil-usuario .grafico-libros-leidos,
-.perfil-usuario .redes-sociales,
-.perfil-usuario .nombre-y-descrip{
+.perfil-usuario #nombre-y-descrip{
     display: block;
     background-color: white;
     padding: 1.5rem;
@@ -80,6 +72,37 @@
     box-shadow: 0 0 12px black;
     border-radius: 18px;
     text-align: center;
+}
+#grafico-leido{
+    margin: 20px;
+    background-color: white;
+    padding: 1.5rem;
+    border-color: #FFFFFF;
+    box-shadow: 0 0 12px black;
+    align-items: center;
+    border-radius: 18px;
+    
+}
+#grafico{
+    margin-left: auto;
+    display: block;
+}
+#leyenda-grafico{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+#nombre-y-descrip{
+    font-size: 20px;
+    margin: 20px;
+}
+#cambio-a-admin{
+    display: flex;
+    position: absolute;
+    left: calc(10% - 90px);    
 }
 .perfil-usuario .nombre-y-descrip h2{
     width: 100%;
@@ -108,10 +131,4 @@
 .perfil-usuario .redes-sociales li a:hover{
     color: blue;
     cursor: pointer;
-}
-
-.perfil-usuario .grafico-libros-leidos{
-    width: 95%;
-    align-items: center;
-    margin-bottom: 1.25rem;
 }
