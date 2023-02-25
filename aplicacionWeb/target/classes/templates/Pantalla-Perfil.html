@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="CSS/Perfil-Style.css">
+    <link rel="stylesheet" href="CSS/Main-Style.css">
+    <title>User Page</title>
+</head>
+<body id="body">
+
+    <header class="hola" id="gh">
+        <div class="usuario-header">
+            <div class="usuario-portada">
+            <div class="container-fluid p-3" id="header-perfil">
+            <div class="d-flex  align-items-center justify-content-center ">
+                <!--Logo-->
+                <a href="Pantalla-Principal.html" class="d-flex nav-link" id="logo-text">
+                <img src="Imagenes/logo3.png"  class="d-inline-block" id="logo-BEE">
+                BEE
+                </a>
+                <!--Categoría, Foro, Noticias-->
+                <div class="container">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="link-nav">
+                        Categoría
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="Pantalla-Foro.html" class="nav-link px-2 " id="link-nav">Foro</a></li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="link-nav">
+                        Noticias
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </div>
+
+                <!--Buscador-->
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <!--Perfil-->
+                <div class="dropdown text-end">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="Imagenes/astronauta.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small">
+                    <li><a class="dropdown-item" href="Pantalla-Perfil.html">Mi Perfil</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="Pantalla-InicioSesion.html">Sign out</a></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+                <div class="usuario-avatar">
+                    <img src="Imagenes/astronauta.jpg" alt="user-img" id="img-user">
+                </div>
+            </div>    
+        </div>    
+    </header>
+
+    <div class="perfil-usuario">
+        <!--Parte de arriba-->    
+        <div class="usuario-body">
+            <div class= "row m-5" style = "height: auto;">
+                <!--Nombre, desc y redes sociales-->
+                <div class="col-4" style="height: auto;">
+                    <div id="nombre-y-descrip">
+                        <a class="btn btn-primary" href="Pantalla-Administracion.html" role="button" id="cambio-a-admin">Modo Admin</a>
+                        <h2>Psykox</h2>
+                        <p class="descripcion">Hola soy Psykox y me encanta la musica y jugar videojuegos. Todo empezó hace años cuando aun era un nogal.</p>
+                    </div>
+                </div>
+                <div class="col-5" id="grafico-leido" style ="width: auto; height: auto; float: left">
+                    <div>
+                        <h2>Gráfico libros leídos</h2>
+                        <p id="leyenda-grafico">
+                            Esta es una leyenda del grafico de tus libros leidos:
+                            <br>
+                            <br>
+                            Rojo 
+                            <br>
+                            Azul
+                            <br>
+                            Amarillo
+                            <br>
+                            Verde
+                            <img src="Imagenes/grafico-ejemplo.png" alt="user-img" id="grafico">
+                        </p>
+                    </div>
+                </div>
+                <div class="col-2" >
+                    <div class="redes-sociales" style="height: auto; width: auto; float:inline-start;">
+                        <h2>Redes Sociales</h2>
+                        <li><i class="icon-mail"><img src="Imagenes/logo-gmail.png" alt="user-img" id="img-gmail"></i><a>psy24@gmail.com</a></li>
+                        <li><i class="icon-instagram"><img src="Imagenes/logo-instagram.png" alt="user-img" id="img-instagram"></i><a>psy_24</a></li>
+                        <li><i class="icon-facebook"><img src="Imagenes/logo-facebook.png" alt="user-img" id="img-facebook"></i><a>Facebook</a></li>
+                    </div> 
+                </div>             
+            </div>
+            <div class= "row m-3" style = "height: 30vh;" id="libros">
+                <h4><u>BOOK-EATEN</u></h4>
+                <!--Lib 1-->
+                <div class="col-2">
+                <div class="card p-0">
+                <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                    Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                            <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                            <div class="col">
+                                <div class="d-flex flex-row">
+                                <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Favoritos
+                                    </label>
+                                </div>
+                                <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                    <option selected>---</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                    <option selected>---</option>
+                                    <option value="1">Completado</option>
+                                    <option value="2">Leyendo</option>
+                                    <option value="3">Pausado</option>
+                                    <option value="3">Por empezar</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                            </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                            <h5>Comentario:</h5>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!--Lib 2-->
+            <div class="col-2">
+            <div class="card p-0">
+                <img src="Imagenes/ripper1.jpg" class="card-img-top" alt="...">
+                <div class="card-body p-2.5">
+                <h5 class="card-title">RIPPER</h5>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2" id="book-btn">
+                    Información
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">RIPPER Volumen-1</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="row border border-lightrounded m-2" id="modal-row">
+                            <img src="Imagenes/ripper1.jpg" class="modal-img p-0" alt="...">
+                            <div class="col">
+                            <div class="d-flex flex-row">
+                                <div class="col-md-2 form-check m-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Favoritos
+                                </label>
+                                </div>
+                                <div class="col-md-4 m-2 list-group-item dropdown">
+                                <h6>Añadir a lista:</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>---</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                </div>
+                                <div class="col-md-4 m-2 list-group-item dropdown">
+                                <h6>Estado:</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>---</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                </div>
+                            </div>
+                            <h3>Sinopsis:</h3>
+                            <p>An devastated and uninhabitable planet, survivors determined to find a new garden of Eden, and creatures who'll attack anything that looks even slightly human: welcome to the world of Ripper, the shonen manga proudly "made in France" by Jeronimo Cejudo! </p>                             
+                            </div>
+                        </div>
+                        <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                            <h5>Comentario:</h5>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!--Lib 3-->
+            <div class="col-2">
+            <div class="card p-0">
+                <img src="Imagenes/radiant1.jpg" class="card-img-top" alt="...">
+                <div class="card-body p-2.5">
+                <h5 class="card-title">Radiant</h5>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal3" id="book-btn">
+                    Información
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Radiant</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="row border border-lightrounded m-2" id="modal-row">
+                            <img src="Imagenes/radiant1.jpg" class="modal-img p-0" alt="...">
+                            <div class="col">
+                            <div class="d-flex flex-row">
+                                <div class="col-md-2 form-check m-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Favoritos
+                                </label>
+                                </div>
+                                <div class="col-md-4 m-2 list-group-item dropdown">
+                                <h6>Añadir a lista:</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>---</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                </div>
+                                <div class="col-md-4 m-2 list-group-item dropdown">
+                                <h6>Estado:</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>---</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                </div>
+                            </div>
+                            <h3>Sinopsis:</h3>
+                            <p>Seth es un aprendiz de hechicero de Pompo Hills. Como todos los hechiceros, él es un "infectado", una de las pocas personas que han sobrevivido a un encuentro con una Némesis, esas criaturas que caen del cielo y destruyen todo a su alrededor. Al ser inmune a ellos, Seth quiere convertirse en un Cazador y luchar contra el Némesis. Pero lo que Seth realmente quiere es encontrar la fuente de todo Némesis, el Radiant. Ayudado por sus compañeros hechiceros, buscará al Radiant, bajo el duro escrutinio de la Inquisición...</p>                             
+                            </div>
+                        </div>
+                        <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                            <h5>Comentario:</h5>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!--Lib 4-->
+            <div class="col-2">
+            <div class="card p-0">
+                <img src="Imagenes/undeadunluck1.jpg" class="card-img-top" alt="...">
+                <div class="card-body p-2.5">
+                <h5 class="card-title">Undead Unluck</h5>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal4" id="book-btn">
+                    Información
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Undead Unluck</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="row border border-lightrounded m-2" id="modal-row">
+                            <img src="Imagenes/undeadunluck1.jpg" class="modal-img p-0" alt="...">
+                            <div class="col">
+                            <div class="d-flex flex-row">
+                                <div class="col-md-2 form-check m-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Favoritos
+                                </label>
+                                </div>
+                                <div class="col-md-4 m-2 list-group-item dropdown">
+                                <h6>Añadir a lista:</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>---</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                </div>
+                                <div class="col-md-4 m-2 list-group-item dropdown">
+                                <h6>Estado:</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>---</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                </div>
+                            </div>
+                            <h3>Sinopsis:</h3>
+                            <p>Fūko Izumo, es una joven que lleva 10 años viviendo recluida desde un incidente que dejó más de 200 personas muertas, incluidos sus padres, cuando tenía 8 años. Tras la finalización de su larga serie favorita de manga para chicas, Fūko decide suicidarse. Está atormentada por el hecho de que no puede ser tocada por nadie debido a su habilidad de «mala suerte», que trae mala suerte a cualquiera que entre en contacto con ella y toque su piel. Es salvada del suicidio por un «no-muerto» (del inglés «undead») que tiene increíbles habilidades regenerativas y que desea morir de la mejor manera posible, sin gustarle su vida inmortal. Por conveniencia, Fūko le llama Andy porque es un muerto viviente (de «undead"), y comienzan a trabajar juntos. Sin embargo, pronto se ven perseguidos por la Unión, una misteriosa organización.</p>                             
+                            </div>
+                        </div>
+                        <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                            <h5>Comentario:</h5>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!--Filtros-->
+            <aside class="filter-container border rounded">
+                <ul class="list-group list-group-flush ">
+                  <li class="list-group-item"><h1>Filtros:</h1></li>
+                  <li class="list-group-item dropdown">
+                    <h5>Categoría:</h5>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>TODO</option>
+                      <option value="1">Manga</option>
+                      <option value="2">Manwha</option>
+                      <option value="3">Manhua</option>
+                      <option value="3">Comics</option>
+                      <option value="3">Novela China</option>
+                      <option value="3">Novela Coreana</option>
+                      <option value="3">Novela Japonesa</option>
+                      <option value="3">Cuentos Infantiles</option>
+                    </select>
+                  </li>
+                  <li class="list-group-item dropdown">
+                    <h5>Género:</h5>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>TODO</option>
+                      <option value="1">Acción</option>
+                      <option value="2">Comedia</option>
+                      <option value="3">Terror</option>
+                      <option value="3">Drama</option>
+                    </select>
+                  </li>
+                  <li class="list-group-item dropdown">
+                    <h5>Año:</h5>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>TODO</option>
+                      <option value="1">2023</option>
+                      <option value="2">2022</option>
+                      <option value="3">2021</option>
+                      <option value="1">2020</option>
+                      <option value="2">2019</option>
+                      <option value="3">2018</option>
+                    </select>
+                  </li>
+                  <li class="list-group-item">
+                    <h5>Temporada:</h5>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Primavera
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Verano
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Otoño
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Invierno
+                      </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item dropdown">
+                    <h5>Estado:</h5>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Completo
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Emisión
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Cancelado
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Pausado
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Por estrenarse
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </aside>
+            </div>
+        </div>
+    </div>
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

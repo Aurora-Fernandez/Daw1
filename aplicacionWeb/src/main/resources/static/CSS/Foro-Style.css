@@ -1,0 +1,82 @@
+
+html{
+    background-color: rgb(214, 233, 250)
+}
+.principio {
+    width: 12000px;
+    border-width: 200px
+    
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 50pt;
+    width: 10000px;
+    border-width: 100px;
+    border-color: #00000000
+}
+
+
+
+#respuesta {
+    margin: 25px;
+    background-color: rgb(160, 208, 247)
+}
+
+.imagenperfil {
+    align-self: right;
+    width: 100pt;
+    height: 100pt;
+    margin-right: 10px;
+}
+.fecha {
+    margin-left: 10px;
+    font-size: 15px;
+    color: darkblue;
+}
+
+.nombreUsuario {
+    font-size: 20px;
+    color: blue;
+    font-style: bold;
+}
+.mensaje {
+    margin: 10px;
+}
+
+/* parte de estrellas */
+
+.checked {
+  color: orange;
+}
+
+#incremento {
+    text-align: right;
+    margin: 10px;
+}
+
+#incremento2 {
+    text-align: right;
+    margin: 10px;
+}
+
+.valores {
+    margin: 10px;
+}
+.boton-volver .boton{
+    background:#1050A7;
+    width: 50%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    color: white;
+    font-size: 15px;
+    align-items: center;
+}
+.boton-volver .boton:hover{
+    background: #1A5FBE;
+    box-shadow: 20px;
+    box-shadow: 7px 13px 37px #000;
+    cursor: pointer;
+}
