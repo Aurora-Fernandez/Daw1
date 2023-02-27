@@ -1,0 +1,55 @@
+
+#imagenLibro {
+    align-self: center;
+    width: 200pt;
+    height: 300pt;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-items: center;
+    margin-left: 55px;
+}
+
+#fila-1{
+    margin: 20cm;
+}
+#columna-1{
+    margin: 20px;
+    background-color: aliceblue;
+    align-items: center;
+    border-radius: 2%;
+}
+h4{
+    background-color: #ffffff;
+    text-align: center;
+    clear: right;
+}
+h5{
+    text-align: center;
+    clear: right;
+    padding-top: 5px;
+}
+
+#img_estadistica{
+    margin-left: auto;
+    display: block;
+}
+#textoEstadistica{
+    /* clear:right;
+    text-align: center;
+    display: inline-block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#book-btn2{
+    background-color: #46e13b;
+    color: #F6F2FF;
+}
+
+
+
+
+  

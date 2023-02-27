@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Aurora">
+        <meta name="description" content="Pag-DAW">
+        <meta name="keywords" content="HTML, CSS, Bootstrap">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Título-->
+        <title>BEE Bookself</title>
+        <!--Icono-->
+        <link rel="icon" type="image/x-icon" href="imagenes/#">
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <!--CSS-->
+        <link rel="stylesheet" href="CSS/Main-Style.css">
+    </head>
+
+    <body>
+        <!--Navbar/header-->
+        <!--He cambio el header para que las llamadas en vez de cargar html estatico las cargue el local hotst con los gets del cotroller -->
+        <header class="p-3" id="header">
+          <div class="container-fluid">
+            <div class="d-flex  align-items-center justify-content-center ">
+              <!--Logo-->
+              <a href="/" class="d-flex nav-link" id="logo-text">
+                <img src="Imagenes/logo3.png"  class="d-inline-block" id="logo-BEE">
+                BEE
+              </a>
+              <!--Categoría, Foro, Noticias-->
+              <div class="container">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="link-nav">
+                      Categoría
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/Pantalla-Buscador-Categorias">Búsqueda-General</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="/Pantalla-Foro" class="nav-link px-2 " id="link-nav">Foro</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="link-nav">
+                      Noticias
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <!--Buscador-->
+              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+              </form>
+
+                
+
+
+              <!--Perfil-->
+              <div class="dropdown text-end">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="Imagenes/astronauta.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small">
+                  <li><a class="dropdown-item" href="/Pantalla-Perfil">Mi Perfil</a></li>  <!-- esto llama a un controlador que tiene un get con /Pantalla-Perfil como parametro y eso es lo que carga las cosas -->
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/Pantalla-InicioSesion">Sign out</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!--Body-->
+        <div class="body_page">
+          <aside>
+          <!--Indicador filtros-->
+            <div class="filters">
+                <div class="row box_filters">
+                  <div class="col-md-1" id="filter">Categoría</div>
+                  <div class="col-md-1" id="filter">Género</div>
+                  <div class="col-md-1" id="filter">Año</div>
+                  <div class="col-md-1" id="filter">Temporada</div>
+                  <div class="col-md-1" id="filter">Estado</div>
+                </div>
+                <div class="line"></div>
+            </div>
+          </aside>
+          <!--Filtros-->
+          <aside class="filter-container border rounded">
+            <ul class="list-group list-group-flush ">
+              <li class="list-group-item"><h1>Filtros:</h1></li>
+              <li class="list-group-item dropdown">
+                <h5>Categoría:</h5>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>TODO</option>
+                  <option value="1">Manga</option>
+                  <option value="2">Manwha</option>
+                  <option value="3">Manhua</option>
+                  <option value="3">Comics</option>
+                  <option value="3">Novela China</option>
+                  <option value="3">Novela Coreana</option>
+                  <option value="3">Novela Japonesa</option>
+                  <option value="3">Cuentos Infantiles</option>
+                </select>
+              </li>
+              <li class="list-group-item dropdown">
+                <h5>Género:</h5>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>TODO</option>
+                  <option value="1">Acción</option>
+                  <option value="2">Comedia</option>
+                  <option value="3">Terror</option>
+                  <option value="3">Drama</option>
+                </select>
+              </li>
+              <li class="list-group-item dropdown">
+                <h5>Año:</h5>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>TODO</option>
+                  <option value="1">2023</option>
+                  <option value="2">2022</option>
+                  <option value="3">2021</option>
+                  <option value="1">2020</option>
+                  <option value="2">2019</option>
+                  <option value="3">2018</option>
+                </select>
+              </li>
+              <li class="list-group-item">
+                <h5>Temporada:</h5>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Primavera
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Verano
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Otoño
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Invierno
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item dropdown">
+                <h5>Estado:</h5>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Completo
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Emisión
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Cancelado
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Pausado
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Por estrenarse
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </aside>
+          <!--Libros-->
+          <section class="books-container" id="borde">
+              <div class="row" id="row">
+                <!--Lib 1-->
+                <div class="card p-0">
+                    <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                    <div class="card-body p-2.5">
+                      <h5 class="card-title">One Piece</h5>
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                        Información
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row border border-lightrounded m-2" id="modal-row">
+                                <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                                <div class="col">
+                                  <div class="d-flex flex-row">
+                                    <div class="col-md-2 form-check m-2">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                      <label class="form-check-label" for="flexCheckDefault">
+                                        Favoritos
+                                      </label>
+                                    </div>
+                                    <div class="col-md-4 m-2 list-group-item dropdown">
+                                      <h6>Añadir a lista:</h6>
+                                      <select class="form-select" aria-label="Default select example">
+                                        <option selected>---</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-4 m-2 list-group-item dropdown">
+                                      <h6>Estado:</h6>
+                                      <select class="form-select" aria-label="Default select example">
+                                        <option selected>---</option>
+                                        <option value="1">Completado</option>
+                                        <option value="2">Leyendo</option>
+                                        <option value="3">Pausado</option>
+                                        <option value="3">Por empezar</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <h3>Sinopsis:</h3>
+                                  <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                                </div>
+                              </div>
+                              <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                                <h5>Comentario:</h5>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <!--Lib 2-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 3-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 4-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 5-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 6-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 7-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 8-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 9-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 10-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 11-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 12-->
+                <div class="card p-0">
+                  <img src="Imagenes/one-piece-99.jpg" class="card-img-top" alt="...">
+                  <div class="card-body p-2.5">
+                    <h5 class="card-title">One Piece</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book-btn">
+                      Información
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">One Piece</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row border border-lightrounded m-2" id="modal-row">
+                              <img src="Imagenes/one-piece-99.jpg" class="modal-img p-0" alt="...">
+                              <div class="col">
+                                <div class="d-flex flex-row">
+                                  <div class="col-md-2 form-check m-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Favoritos
+                                    </label>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Añadir a lista:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 m-2 list-group-item dropdown">
+                                    <h6>Estado:</h6>
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>---</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <h3>Sinopsis:</h3>
+                                <p>One Piece es un cómic y anime japonés de Eiichiro Oda. One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger.</p>                             
+                              </div>
+                            </div>
+                            <div class="row border border-light rounded m-2" id="modal-row-sinopsis">
+                              <h5>Comentario:</h5>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Lib 13-->
+                <!--...-->
+              </div>
+            </div>
+          </section>
+
+        <!--Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    </body>
+</html>
