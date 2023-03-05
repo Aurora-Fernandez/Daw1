@@ -46,4 +46,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
+
+<classpathentry kind="lib" path="appWeb\lib\mysql-connector-j-8.0.32.jar"> 
+
 </classpath>
