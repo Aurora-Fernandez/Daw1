@@ -21,6 +21,15 @@
 		<java.version>1.11</java.version>
 	</properties>
 
+
+	<build>
+			<plugins>
+			<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			</plugins>
+	</build>
     <!-- Aquí estan todas las dependencias extra que he visto que igual hacian falta, puede que no lo haga y se puedan quitar pero no lo he comprobado -->
 
 
@@ -41,21 +50,9 @@
             <version>5.2.3</version>
         </dependency>
 <!-- bootstrap -->
-<!-- Java Servlet y JSP -->
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.1.0</version>
-    <scope>provided</scope>
-</dependency>
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-data-jpa</artifactId>
-</dependency>
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>jstl</artifactId>
-    <version>1.2</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
@@ -70,7 +67,13 @@
     <artifactId>spring-boot-starter-thymeleaf</artifactId>
     <version>2.2.6.RELEASE</version>
 </dependency>
-		
+	
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 
